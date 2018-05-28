@@ -87,15 +87,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="时隔一个月，重新用hexo搭建个人博客"><a href="#时隔一个月，重新用hexo搭建个人博客" class="headerlink" title="时隔一个月，重新用hexo搭建个人博客"></a>时隔一个月，重新用hexo搭建个人博客</h3><hr>
-<blockquote>
-<p>在大概一个月之前自己也捣鼓了一个基于hexo的这么一个个人博客，<br>然而这个博客还是存在很大的不足，比如每次打开总是要从命令行输入<br>hexo -s，再通过localhost：4000进入，这样每次登陆自己博客显得太<br>低端了。而且在日常使用中，只能在本机登陆对于我们的使用也是显得<br>很不方便。同时这种情况下其他人没有办法访问，也失去了其分享交流<br>的意义。</p>
+        <hr>
+<h2 id="时隔一个月，重新用hexo搭建个人博客"><a href="#时隔一个月，重新用hexo搭建个人博客" class="headerlink" title="时隔一个月，重新用hexo搭建个人博客"></a>时隔一个月，重新用hexo搭建个人博客</h2><blockquote>
+<p>在大概一个月之前自己也捣鼓了一个基于hexo的这么一个个人博客，<br>然而这个博客还是存在很大的不足，比如每次打开总是要从命令行输入<br>hexo -s，再通过localhost：4000进入，这样每次登陆自己博客显得太<br>低端了。而且在日常使用中，只能在本机登陆对于我们的使用也是显得<br>很不方便。同时这种情况下其他人没有办法访问，也失去了其分享交流</p>
 </blockquote>
+<h2 id="的意义。"><a href="#的意义。" class="headerlink" title="的意义。"></a>的意义。</h2><h2 id="首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的"><a href="#首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的" class="headerlink" title="首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的"></a>首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的</h2><ul>
+<li>** 首先，是github上仓库名的问题，当时建立的一个仓库名是WymanYan.github.io,<br>但是我的用户名是Wyman-Yan，仓库名应当与用户名相同。</li>
+<li>** 在删除该仓库重新建立新仓库后，hexo博客的搭建就开始顺畅了，<br>然而在搭建好后，非本地也可以访问了，而从本地localhost：4000的页面<br>却和Wyman-Yan.github.io来访问的页面不一样，这时候应该在博客的根目录下<br>找到_config.yml，在文件最底部改成如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Wyman-Yan/Wyman-Yan.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>至此，两个页面才相同</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/再次搭建hexo个人博客/" data-id="cjhqe7wy90003m0ublz94fws0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/再次搭建hexo个人博客/" data-id="cjhqen4qj000304ubf8awqr9j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/hello-world/" data-id="cjhqe7wy70002m0ubkif4vbi9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/hello-world/" data-id="cjhqen4qf000104ubvyp73by0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/06/create界面感悟/" data-id="cjhqe7wxy0000m0ubvweplsq3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/06/create界面感悟/" data-id="cjhqen4qa000004ubcdx0oj6y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/06/hexo搭建个人博客/" data-id="cjhqe7wy40001m0ubxytog0wq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/06/hexo搭建个人博客/" data-id="cjhqen4qh000204uboqokdq33" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/06/简化微博总览/" data-id="cjhqe7wya0004m0ubytc7k0f5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/06/简化微博总览/" data-id="cjhqen4qk000404ub3gx154em" class="article-share-link">Share</a>
       
       
     </footer>
