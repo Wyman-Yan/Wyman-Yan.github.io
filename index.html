@@ -92,17 +92,24 @@
 <p>在大概一个月之前自己也捣鼓了一个基于hexo的这么一个个人博客，<br>然而这个博客还是存在很大的不足，比如每次打开总是要从命令行输入<br>hexo -s，再通过localhost：4000进入，这样每次登陆自己博客显得太<br>低端了。而且在日常使用中，只能在本机登陆对于我们的使用也是显得<br>很不方便。同时这种情况下其他人没有办法访问，也失去了其分享交流<br>的意义。</p>
 </blockquote>
 <hr>
-<h2 id="首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的"><a href="#首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的" class="headerlink" title="首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的"></a>首先是只能本地访问的问题，主要当时是有几个点没有按教程做好的</h2><ul>
+<h2 id="是只能本地访问的问题，主要当时是有几个点没有按教程做好的"><a href="#是只能本地访问的问题，主要当时是有几个点没有按教程做好的" class="headerlink" title="是只能本地访问的问题，主要当时是有几个点没有按教程做好的"></a>是只能本地访问的问题，主要当时是有几个点没有按教程做好的</h2><ul>
 <li><strong>首先，是github上仓库名的问题，当时建立的一个仓库名是WymanYan.github.io,<br>但是我的用户名是Wyman-Yan，仓库名应当与用户名相同。</strong></li>
 <li><strong>在删除该仓库重新建立新仓库后，hexo博客的搭建就开始顺畅了，<br>然而在搭建好后，非本地也可以访问了，而从本地localhost：4000的页面<br>却和Wyman-Yan.github.io来访问的页面不一样，这时候应该在博客的根目录下<br>找到_config.yml，在文件最底部改成如下，至此，两个页面才相同</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Wyman-Yan/Wyman-Yan.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><ul>
+<li><p>**现在写文章，每次写完，都只能用下列命令更新（而且速度很慢）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g    (hexo generate #生成静态页面至public目录)</span><br><span class="line">hexo d    (hexo deploy #将.deploy目录部署到Github)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>**如果能在写完文章就自动上传到hexo博客或许会方便一些？</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/再次搭建hexo个人博客/" data-id="cjhqewwzc0003r0ubvdkoal7c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/再次搭建hexo个人博客/" data-id="cjhqf5hha0003s4ubfnpbt0y6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,58 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/hello-world/" data-id="cjhqewwz70001r0ubfhz0aqbx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-create界面感悟" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/06/create界面感悟/" class="article-date">
-  <time datetime="2018-05-06T11:18:00.000Z" itemprop="datePublished">2018-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/06/create界面感悟/">创建简易微博之create注册界面感悟</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="创建简易微博之create注册界面感悟"><a href="#创建简易微博之create注册界面感悟" class="headerlink" title="创建简易微博之create注册界面感悟"></a>创建简易微博之create注册界面感悟</h1><hr>
-<h3 id="需要考虑的几个方面："><a href="#需要考虑的几个方面：" class="headerlink" title="需要考虑的几个方面："></a>需要考虑的几个方面：</h3><p>-<strong>页面设计所需要的html与css知识</strong><br>-<strong>注册界面所需要的用户信息</strong><br>-<strong>如何将注册页面传输进入的数据进行处理</strong><br>-<strong>制作过程中遇到的问题</strong></p>
-<hr>
-<h2 id="制作一个简易微博需要html与css做些什么？"><a href="#制作一个简易微博需要html与css做些什么？" class="headerlink" title="制作一个简易微博需要html与css做些什么？"></a>制作一个简易微博需要html与css做些什么？</h2><p>在我制作的过程中，html和css知识的学习是在最开始进行的，毕竟自己觉得如果能在一开始就能看到这个微博的雏形界面是很能鼓励自己的，在我制作出create的页面时，虽然里面的输入内容提交后并没有什么作用，而整个的页面在旁人看起来也是很简陋的很幼稚的，但是自己在看到这个页面外形的成品还是感到了满足，也有了赶快完善其功能的欲望。也给自己的制作开了个好头。</p>
-<hr>
-<h2 id="注册页面所需要的信息"><a href="#注册页面所需要的信息" class="headerlink" title="注册页面所需要的信息"></a>注册页面所需要的信息</h2><p>注册界面的信息我们都见过很多，结合某浪某讯微博的注册，大概为自己的微博注册页面考虑了几个需要填写的信息。分别是邮箱，账号，用户名，头像，密码，密码确认(防止手抖)，验证码的填写，自我简介等等(还待完善)。</p>
-<hr>
-<h2 id="数据传输问题"><a href="#数据传输问题" class="headerlink" title="数据传输问题"></a>数据传输问题</h2><p>通过post获得在input输入内容，另外创建一个createsave的php文件，查看输入内容(邮箱，账号，密码等)是否为空，空就要求用户重新输入，再通过php获取mysql数据库中的数据，验证邮箱，账号是否已经被注册。</p>
-<hr>
-<h2 id="制作过程中遇到的问题"><a href="#制作过程中遇到的问题" class="headerlink" title="制作过程中遇到的问题"></a>制作过程中遇到的问题</h2><h4 id="页面背景图没有填满，而是重复拼成，所以在background后加上以下内容："><a href="#页面背景图没有填满，而是重复拼成，所以在background后加上以下内容：" class="headerlink" title="页面背景图没有填满，而是重复拼成，所以在background后加上以下内容："></a><1>页面背景图没有填满，而是重复拼成，所以在background后加上以下内容：</1></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">style = &quot;background-repeat:no-repeat;  </span><br><span class="line">	     background-size:100% 100%; </span><br><span class="line">	     background-attachment:fixed;&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="在用php语言连接操作mysql数据库时会常出现以下警示："><a href="#在用php语言连接操作mysql数据库时会常出现以下警示：" class="headerlink" title="在用php语言连接操作mysql数据库时会常出现以下警示："></a><2>在用php语言连接操作mysql数据库时会常出现以下警示：</2></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deprecated: mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead；</span><br></pre></td></tr></table></figure>
-<p>因此我把mysql改为mysqli。</p>
-<h4 id="session-start-没有放在最开头"><a href="#session-start-没有放在最开头" class="headerlink" title="session_start()没有放在最开头"></a><3>session_start()没有放在最开头</3></h4><p>会出现以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Warning: Cannot send session cookie - headers already sent</span><br><span class="line">Warning: Cannot send session cache limiter - headers already sent</span><br></pre></td></tr></table></figure></p>
-<p>改正只需要放在第一行，并不是说session_start()必须放在第一行，而是要保证在使用它之前，没有向浏览器输出过任何内容,为了方便索性直接放在第一行。</p>
-<hr>
-<h3 id="心得与体会"><a href="#心得与体会" class="headerlink" title="心得与体会"></a>心得与体会</h3><h5 id="在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。"><a href="#在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。" class="headerlink" title="在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。"></a>在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。</h5>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/06/create界面感悟/" data-id="cjhqewwz20000r0ubhnpl126g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/hello-world/" data-id="cjhqf5hh10000s4ubgp3j2y38" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +217,58 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/06/hexo搭建个人博客/" data-id="cjhqewwza0002r0ubmwkephpl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/06/hexo搭建个人博客/" data-id="cjhqf5hh50001s4ub7hub2cxh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-create界面感悟" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/06/create界面感悟/" class="article-date">
+  <time datetime="2018-05-06T11:18:00.000Z" itemprop="datePublished">2018-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/06/create界面感悟/">创建简易微博之create注册界面感悟</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建简易微博之create注册界面感悟"><a href="#创建简易微博之create注册界面感悟" class="headerlink" title="创建简易微博之create注册界面感悟"></a>创建简易微博之create注册界面感悟</h1><hr>
+<h3 id="需要考虑的几个方面："><a href="#需要考虑的几个方面：" class="headerlink" title="需要考虑的几个方面："></a>需要考虑的几个方面：</h3><p>-<strong>页面设计所需要的html与css知识</strong><br>-<strong>注册界面所需要的用户信息</strong><br>-<strong>如何将注册页面传输进入的数据进行处理</strong><br>-<strong>制作过程中遇到的问题</strong></p>
+<hr>
+<h2 id="制作一个简易微博需要html与css做些什么？"><a href="#制作一个简易微博需要html与css做些什么？" class="headerlink" title="制作一个简易微博需要html与css做些什么？"></a>制作一个简易微博需要html与css做些什么？</h2><p>在我制作的过程中，html和css知识的学习是在最开始进行的，毕竟自己觉得如果能在一开始就能看到这个微博的雏形界面是很能鼓励自己的，在我制作出create的页面时，虽然里面的输入内容提交后并没有什么作用，而整个的页面在旁人看起来也是很简陋的很幼稚的，但是自己在看到这个页面外形的成品还是感到了满足，也有了赶快完善其功能的欲望。也给自己的制作开了个好头。</p>
+<hr>
+<h2 id="注册页面所需要的信息"><a href="#注册页面所需要的信息" class="headerlink" title="注册页面所需要的信息"></a>注册页面所需要的信息</h2><p>注册界面的信息我们都见过很多，结合某浪某讯微博的注册，大概为自己的微博注册页面考虑了几个需要填写的信息。分别是邮箱，账号，用户名，头像，密码，密码确认(防止手抖)，验证码的填写，自我简介等等(还待完善)。</p>
+<hr>
+<h2 id="数据传输问题"><a href="#数据传输问题" class="headerlink" title="数据传输问题"></a>数据传输问题</h2><p>通过post获得在input输入内容，另外创建一个createsave的php文件，查看输入内容(邮箱，账号，密码等)是否为空，空就要求用户重新输入，再通过php获取mysql数据库中的数据，验证邮箱，账号是否已经被注册。</p>
+<hr>
+<h2 id="制作过程中遇到的问题"><a href="#制作过程中遇到的问题" class="headerlink" title="制作过程中遇到的问题"></a>制作过程中遇到的问题</h2><h4 id="页面背景图没有填满，而是重复拼成，所以在background后加上以下内容："><a href="#页面背景图没有填满，而是重复拼成，所以在background后加上以下内容：" class="headerlink" title="页面背景图没有填满，而是重复拼成，所以在background后加上以下内容："></a><1>页面背景图没有填满，而是重复拼成，所以在background后加上以下内容：</1></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">style = &quot;background-repeat:no-repeat;  </span><br><span class="line">	     background-size:100% 100%; </span><br><span class="line">	     background-attachment:fixed;&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="在用php语言连接操作mysql数据库时会常出现以下警示："><a href="#在用php语言连接操作mysql数据库时会常出现以下警示：" class="headerlink" title="在用php语言连接操作mysql数据库时会常出现以下警示："></a><2>在用php语言连接操作mysql数据库时会常出现以下警示：</2></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deprecated: mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead；</span><br></pre></td></tr></table></figure>
+<p>因此我把mysql改为mysqli。</p>
+<h4 id="session-start-没有放在最开头"><a href="#session-start-没有放在最开头" class="headerlink" title="session_start()没有放在最开头"></a><3>session_start()没有放在最开头</3></h4><p>会出现以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Warning: Cannot send session cookie - headers already sent</span><br><span class="line">Warning: Cannot send session cache limiter - headers already sent</span><br></pre></td></tr></table></figure></p>
+<p>改正只需要放在第一行，并不是说session_start()必须放在第一行，而是要保证在使用它之前，没有向浏览器输出过任何内容,为了方便索性直接放在第一行。</p>
+<hr>
+<h3 id="心得与体会"><a href="#心得与体会" class="headerlink" title="心得与体会"></a>心得与体会</h3><h5 id="在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。"><a href="#在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。" class="headerlink" title="在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。"></a>在创建注册界面的过程中，要考虑php与html，mysql的协调运用。同时也要把控好注册账号与邮箱，防止用户多次注册同一账号邮箱。</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/06/create界面感悟/" data-id="cjhqf5hh80002s4ub0qb2z6bp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/06/简化微博总览/" data-id="cjhqewwzd0004r0ubvzsavdps" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/06/简化微博总览/" data-id="cjhqf5hhb0004s4ub6v4jes9q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,11 +376,11 @@
           </li>
         
           <li>
-            <a href="/2018/05/06/create界面感悟/">创建简易微博之create注册界面感悟</a>
+            <a href="/2018/05/06/hexo搭建个人博客/">用hexo搭建个人博客的学习心得与体会</a>
           </li>
         
           <li>
-            <a href="/2018/05/06/hexo搭建个人博客/">用hexo搭建个人博客的学习心得与体会</a>
+            <a href="/2018/05/06/create界面感悟/">创建简易微博之create注册界面感悟</a>
           </li>
         
           <li>
