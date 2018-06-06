@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Git的进一步学习小结 | 再见二丁目</title><meta name="description"><meta name="generator" content="再见二丁目"><meta name="author" content="Wyman Yan"><meta name="keywords" content="sjaak van den berg, svdb, bitcoin, crypto, payment, integration, bitcoins, wordpress, betaling, webshop, front end, design, ontwerp, developer"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160x160.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png"><meta name="msapplication-TileColor" content="#121315"><meta name="msapplication-TileImage" content="/images/mstile-144x144.png"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><a href="/"><img src="/images/taeyeon.png" alt="再见二丁目" title="再见二丁目"></a><h1><a href="/" alt="再见二丁目" title="再见二丁目" itemprop="headline">再见二丁目</a></h1><p itemprop="description">若你喜欢怪人，其实我很美</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/" alt="Home" title="Home" itemprop="url">Home</a></li><li itemprop="name"><a href="/images" alt="Articles" title="Articles" itemprop="url">Articles</a></li><li itemprop="name"><a href="/images" alt="About" title="About" itemprop="url">About</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline">Git的进一步学习小结</h1><span class="post-meta">Published on<time itemprop="datePublished" datetime="2018-06-06T13:59:05.000Z"> 星期三, 六月 6日 2018 at 21:59</time><br>Last updated on<time itemprop="dateModified" datetime="2018-06-06T13:59:05.000Z"> 星期三, 六月 6日 2018 at 23:01</time></span><hr>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22638367&auto=0&height=66"></iframe>
+
+<hr>
+<h3 id="Git进一步学习的小结"><a href="#Git进一步学习的小结" class="headerlink" title="Git进一步学习的小结"></a>Git进一步学习的小结</h3><blockquote>
+<p>最近Git的学习有点滞后，在这里对最近的学习做个小回顾吧。</p>
+</blockquote>
+<hr>
+<h5 id="Git的远程仓库"><a href="#Git的远程仓库" class="headerlink" title="Git的远程仓库"></a>Git的远程仓库</h5><ul>
+<li><strong>添加远程库的问题</strong><blockquote>
+<p>首先本地得有个git仓库，要不然在关联github仓库时会出现fatal: not a git repository (or any of the parent directories): .git。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:Wyman-Yan/learninggit.git</span><br><span class="line"></span><br><span class="line">(origin是远程库的名字，Wyman-Yan是本人github账户名，learninggit.git是本地仓库名)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>推送master分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一次：</span><br><span class="line">	$git push -u origin master</span><br><span class="line">(加上-u参数，会把本地master分支与远程master分支关联起来，方便以后推送或拉去的简化命令)</span><br><span class="line">之后每一次：</span><br><span class="line">	$git push origin master</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>第一次用clone和push，会有以下警告，敲了yes后无视即可(是有关信任列表的)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (xx.xx.xx.xx)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is xx.xx.xx.xx.xx.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br><span class="line"></span><br><span class="line">yes</span><br><span class="line"></span><br><span class="line">Warning: Permanently added &apos;github.com&apos; (RSA) to the list of known hosts.</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p><strong>从远程库克隆</strong></p>
+<blockquote>
+<p>远程库克隆利于多人协作。克隆实际上最近刚好用过，就是之前换主题时，就是从别人的github远程库中克隆到本地，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:Wyman-Yan/flexy.git</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><strong>Git支持多种协议</strong></p>
+<blockquote>
+<p>Git支持的两种协议有http和ssh，但是前者速度慢且每次推送要输入命令，而通过ssh支持的原生Git协议速度最快。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h4 id="Git的分支管理"><a href="#Git的分支管理" class="headerlink" title="Git的分支管理"></a>Git的分支管理</h4><p>。。。未完待续</p>
+</article></main></body></html>
