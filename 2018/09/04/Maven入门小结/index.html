@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Maven入门小结 | 再见二丁目</title><meta name="description"><meta name="generator" content="再见二丁目"><meta name="author" content="Wyman Yan"><meta name="keywords" content="sjaak van den berg, svdb, bitcoin, crypto, payment, integration, bitcoins, wordpress, betaling, webshop, front end, design, ontwerp, developer"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160x160.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png"><meta name="msapplication-TileColor" content="#121315"><meta name="msapplication-TileImage" content="/images/mstile-144x144.png"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><a href="/"><img src="/images/taeyeon.png" alt="再见二丁目" title="再见二丁目"></a><h1><a href="/" alt="再见二丁目" title="再见二丁目" itemprop="headline">再见二丁目</a></h1><p itemprop="description">若你喜欢怪人，其实我很美</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/" alt="Home" title="Home" itemprop="url">Home</a></li><li itemprop="name"><a href="/images" alt="Articles" title="Articles" itemprop="url">Articles</a></li><li itemprop="name"><a href="/images" alt="About" title="About" itemprop="url">About</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline">Maven入门小结</h1><span class="post-meta">Published on<time itemprop="datePublished" datetime="2018-09-04T07:45:29.000Z"> 星期二, 九月 4日 2018 at 15:45</time><br>Last updated on<time itemprop="dateModified" datetime="2018-09-04T07:45:29.000Z"> 星期二, 九月 4日 2018 at 16:37</time></span><hr>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1302335545&auto=0&height=66"></iframe>
+
+<hr>
+<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><blockquote>
+<h6 id="开源项目管理工具。在构建项目时，没有Maven需要手动导入大量jar包，过于繁琐。而使用Maven可以进行项目高度自动化构建，依赖管理-这是使用Maven最大的好处-，仓库管理。"><a href="#开源项目管理工具。在构建项目时，没有Maven需要手动导入大量jar包，过于繁琐。而使用Maven可以进行项目高度自动化构建，依赖管理-这是使用Maven最大的好处-，仓库管理。" class="headerlink" title="开源项目管理工具。在构建项目时，没有Maven需要手动导入大量jar包，过于繁琐。而使用Maven可以进行项目高度自动化构建，依赖管理(这是使用Maven最大的好处)，仓库管理。"></a>开源项目管理工具。在构建项目时，没有Maven需要手动导入大量jar包，过于繁琐。而使用Maven可以进行项目高度自动化构建，依赖管理(这是使用Maven最大的好处)，仓库管理。</h6></blockquote>
+<h4 id="Maven的安装"><a href="#Maven的安装" class="headerlink" title="Maven的安装"></a>Maven的安装</h4><blockquote>
+<p>Maven的安装以及环境变量的配置与JDK的类似，也是新建一个MAVEN_HOME，以及在Path中添加配置，要注意Maven与JDK版本的适应问题。<br>安装完毕后在cmd用mvn -version可查看是否安装配置成功</p>
+</blockquote>
+<h4 id="Maven的核心文件pom-xml"><a href="#Maven的核心文件pom-xml" class="headerlink" title="Maven的核心文件pom.xml"></a>Maven的核心文件pom.xml</h4><ul>
+<li><p><strong>依赖</strong></p>
+<blockquote>
+<p>在IDE中用Maven构建项目后，例如你想构建一个SpringBoot的项目，你就需要在pom.xml文件下添加相应的依赖，这需要在<dependency></dependency>标签中添加，则Maven会把相应的jar包导入到本地资源库(.m2文件夹)中，举例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	 &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;1.5.9.RELEASE&lt;/version&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><strong>插件</strong></p>
+<blockquote>
+<p>插件的添加和依赖类似，不过不是在<dependencies></dependencies>标签下，而是在<bulid></bulid>下。举例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">       &lt;plugins&gt;</span><br><span class="line">           &lt;plugin&gt;</span><br><span class="line">               &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">               &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">           &lt;/plugin&gt;</span><br><span class="line">       &lt;/plugins&gt;</span><br><span class="line">   &lt;/build&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><strong>聚合</strong></p>
+<blockquote>
+<p>一次要构建多个项目模块，可用到聚合的方法,如下方，模块一二三就被聚合在一起，注意的是，要填入的路径为相对路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;modules&gt;</span><br><span class="line">	&lt;module&gt;模块一&lt;/module&gt;</span><br><span class="line">    &lt;module&gt;模块二&lt;/module&gt;</span><br><span class="line">    &lt;module&gt;模块三&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><strong>继承</strong></p>
+<blockquote>
+<p> 为了减少重复代码的编写，我们需要创建POM的父子结构，然后在POM中申明一些配置供子POM继承。举例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;parentpar &gt; </span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; </span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; </span><br><span class="line">    &lt;version&gt;1.5.8.RELEASE&lt;/version&gt; </span><br><span class="line">&lt;/parent&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><strong>本地资源库</strong></p>
+<blockquote>
+<p>默认情况下本地资源库在C盘用户名文件夹下的.m2文件夹中，但是在Maven安装目录下的conf中可以通过修改setting.xml文件中的<localrepository>新仓库地址</localrepository>标签来修改新仓库。</p>
+</blockquote>
+</li>
+<li><p><strong>打包方式</strong></p>
+<blockquote>
+<p>可以在<packaging></packaging>中修改打包方式，像在Web项目中就会以war形式打包</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Maven的生命周期"><a href="#Maven的生命周期" class="headerlink" title="Maven的生命周期"></a>Maven的生命周期</h4><blockquote>
+<p>Maven的三种标准生命周期：</p>
+<ul>
+<li><strong>clean</strong></li>
+<li><strong>default(或build)</strong></li>
+<li><strong>site</strong></li>
+</ul>
+</blockquote>
+<h4 id="Maven清洁"><a href="#Maven清洁" class="headerlink" title="Maven清洁"></a>Maven清洁</h4><blockquote>
+<p>清洁命令： mvn clean<br>清洁的生命周期：</p>
+<ul>
+<li><strong>pre-clean</strong></li>
+<li><strong>clean</strong></li>
+<li><strong>post-clean</strong></li>
+</ul>
+</blockquote>
+</article></main></body></html>
