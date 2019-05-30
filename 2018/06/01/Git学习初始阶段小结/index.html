@@ -1,38 +1,181 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Git学习初始阶段小结 | 再见二丁目</title><meta name="description"><meta name="generator" content="再见二丁目"><meta name="author" content="Wyman Yan"><meta name="keywords" content="sjaak van den berg, svdb, bitcoin, crypto, payment, integration, bitcoins, wordpress, betaling, webshop, front end, design, ontwerp, developer"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160x160.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png"><meta name="msapplication-TileColor" content="#121315"><meta name="msapplication-TileImage" content="/images/mstile-144x144.png"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><a href="/"><img src="/images/taeyeon.png" alt="再见二丁目" title="再见二丁目"></a><h1><a href="/" alt="再见二丁目" title="再见二丁目" itemprop="headline">再见二丁目</a></h1><p itemprop="description">소나기</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/" alt="Home" title="Home" itemprop="url">Home</a></li><li itemprop="name"><a href="/_posts" alt="Articles" title="Articles" itemprop="url">Articles</a></li><li itemprop="name"><a href="/images" alt="About" title="About" itemprop="url">About</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline">Git学习初始阶段小结</h1><span class="post-meta">Published on<time itemprop="datePublished" datetime="2018-06-01T05:12:54.000Z"> 星期五, 六月 1日 2018 at 13:12</time><br>Last updated on<time itemprop="dateModified" datetime="2018-06-01T05:12:54.000Z"> 星期五, 六月 8日 2018 at 9:44</time></span><hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66"></iframe>
+<%
+  var layout;
 
-<hr>
-<h3 id="学习了一个多星期的Git，浅谈一下自己的收获吧"><a href="#学习了一个多星期的Git，浅谈一下自己的收获吧" class="headerlink" title="学习了一个多星期的Git，浅谈一下自己的收获吧"></a>学习了一个多星期的Git，浅谈一下自己的收获吧</h3><hr>
-<h4 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h4><blockquote>
-<p>目前对Git的认识，大概是以下几个标签：开源的，分布式的，版本控制系统<br>那么问题来了，究竟什么是分布式，什么是集中式，什么是版本控制系统？</p>
-<ul>
-<li><strong>通过目前的学习来看，所谓集中式的版本控制系统（比如CVS和SVN），版本库是集中在中央服务器的，工作时需要从中央服务器取得新版本，工作后再推送到中央服务器</strong></li>
-<li><strong>分布式版本管理系统则不同，每个人的电脑上都有一个版本库，因此不需要联网就可以使用</strong></li>
-</ul>
-</blockquote>
-<hr>
-<h4 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h4><blockquote>
-<p>安装默认选项一直装，最后完成注意设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git config --global user.name &quot;Wyman&quot;</span><br><span class="line">$git config --global user.email &quot;159434637@qq.com&quot;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<hr>
-<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><blockquote>
-<h6 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git init</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<h6 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ls -ah                   (查看目录下文件)</span><br><span class="line">$ git status               (掌握仓库当前状态，最好常看，以免有文件未更新)</span><br><span class="line">$ git diff                 (查看修改后状态)</span><br><span class="line">$ git log                  (查看版本信息)    </span><br><span class="line">$ git log --pretty=oneline (查看版本信息，以精简的形式)</span><br><span class="line">$ cat test.txt             (查看test的内容)</span><br><span class="line">$ git reflog               (查看每一次的命令)</span><br><span class="line">$ git branch               (查看当前分支)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<h6 id="提交上传更新文件"><a href="#提交上传更新文件" class="headerlink" title="提交上传更新文件"></a>提交上传更新文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git add test.txt                        (把工作区修改提交到暂存区)</span><br><span class="line">$git commit -m &quot;wrote a test file&quot;       (把暂存区修改提交到版本库)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<hr>
-<h4 id="Git重要操作"><a href="#Git重要操作" class="headerlink" title="Git重要操作"></a>Git重要操作</h4><blockquote>
-<h6 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard HEAD^    (回退到上一个版本)</span><br><span class="line">$ git reset --hard 1094a    (回退到制定版本，1094a为版本id前几位)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<h6 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.只是在工作区修改，为提交到暂存区：</span><br><span class="line">$ git checkout -- test.txt   </span><br><span class="line">---------------------------------</span><br><span class="line">2.修改提交到了暂存区：</span><br><span class="line">$ git reset HEAD test.txt</span><br><span class="line">$ git checkout -- test.txt</span><br><span class="line">---------------------------------</span><br><span class="line">3.修改提交到了版本库，但是未将本地版本库推送到远程库：</span><br><span class="line">$ git reset --hard HEAD^ 或 git reset --hard 1094a</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<h6 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ rm test.txt</span><br><span class="line">(此时如果误删了可以用 $ git checkout -- test.txt恢复)</span><br><span class="line">$ git rm test.txt</span><br><span class="line">$ git commit -m &quot;remove test.txt&quot;</span><br><span class="line">(完全删除了也没关系，可以用版本回退)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<hr>
-</article></main></body></html>
+  function is_customLayout() {
+    if (page.layout === "gallery" || page.layout === "galleries") {
+      return true
+    }
+  }
+
+  if (is_home()) layout = 'posts';
+  if (is_post()) layout = 'post';
+  if (is_archive() && !is_year()) layout = 'archive';
+  if (is_year() || is_tag() || is_category()) layout = 'archives';
+  if (!is_home() && !is_year() && !is_tag() && !is_category() && !is_post() && !is_archive() && !is_customLayout()) layout = 'post';
+  if (page.path === 'search.html') layout = 'search';
+  if (is_customLayout()) layout = page.layout
+%>
+<!DOCTYPE html>
+<html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
+
+<%-partial('_partials/head')%>
+
+<body class="mdui-drawer-body-left mdui-theme-primary-<%= theme.style.primary_color %> mdui-theme-accent-<%= theme.style.accent_color %>">
+
+  <style>
+    #spinner {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+          opacity: 1;
+      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+          transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+    }
+    main {
+      opacity: 0;
+      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+      transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+      display: none;
+    }
+  </style>
+  <div id="spinner">
+    <style>
+      .spinner {
+
+      -webkit-animation: rotator 1.4s linear infinite;
+              animation: rotator 1.4s linear infinite;
+      }
+
+      @-webkit-keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+      }
+      }
+
+      @keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+      }
+      }
+
+      .path {
+      stroke-dasharray: 187;
+      stroke-dashoffset: 0;
+      -webkit-transform-origin: center;
+              transform-origin: center;
+      -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+              animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+      }
+
+      @-webkit-keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+      25% {
+        stroke: #DE3E35;
+      }
+      50% {
+        stroke: #F7C223;
+      }
+      75% {
+        stroke: #1B9A59;
+      }
+      100% {
+        stroke: #4285F4;
+      }
+      }
+
+      @keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+      25% {
+        stroke: #DE3E35;
+      }
+      50% {
+        stroke: #F7C223;
+      }
+      75% {
+        stroke: #1B9A59;
+      }
+      100% {
+        stroke: #4285F4;
+      }
+      }
+
+      @-webkit-keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+      }
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+      }
+      }
+
+      @keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+      }
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+      }
+      }
+    </style>
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+      <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+    </svg>
+  </div>
+
+  <main>
+    <%-partial('_partials/appbar')%>
+    <%-partial('_partials/drawer')%>
+    <div id="top"></div>
+
+    <%- js("js/lightgallery.min") %>
+
+    <div id="barba-wrapper">
+      <div class="barba-container"  data-namespace="<%= layout %>">
+        <%- body %>
+      </div>
+    </div>
+  </main>
+
+  <div id="outdated" style="z-index: 9999;">
+    <h6><%= __('outdated_browser.title')  %></h6>
+    <p><%= __('outdated_browser.line_one') %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= __('outdated_browser.link') %></a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= __('outdated_browser.close') %>">&times;</a></p>
+  </div>
+  <%-partial('_partials/import_js.ejs')%>
+
+</body>
+</html>
