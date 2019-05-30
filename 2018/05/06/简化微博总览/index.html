@@ -1,181 +1,24 @@
-<%
-  var layout;
-
-  function is_customLayout() {
-    if (page.layout === "gallery" || page.layout === "galleries") {
-      return true
-    }
-  }
-
-  if (is_home()) layout = 'posts';
-  if (is_post()) layout = 'post';
-  if (is_archive() && !is_year()) layout = 'archive';
-  if (is_year() || is_tag() || is_category()) layout = 'archives';
-  if (!is_home() && !is_year() && !is_tag() && !is_category() && !is_post() && !is_archive() && !is_customLayout()) layout = 'post';
-  if (page.path === 'search.html') layout = 'search';
-  if (is_customLayout()) layout = page.layout
-%>
-<!DOCTYPE html>
-<html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
-
-<%-partial('_partials/head')%>
-
-<body class="mdui-drawer-body-left mdui-theme-primary-<%= theme.style.primary_color %> mdui-theme-accent-<%= theme.style.accent_color %>">
-
-  <style>
-    #spinner {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-          opacity: 1;
-      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-          transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-    }
-    main {
-      opacity: 0;
-      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-      transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-      display: none;
-    }
-  </style>
-  <div id="spinner">
-    <style>
-      .spinner {
-
-      -webkit-animation: rotator 1.4s linear infinite;
-              animation: rotator 1.4s linear infinite;
-      }
-
-      @-webkit-keyframes rotator {
-      0% {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(270deg);
-                transform: rotate(270deg);
-      }
-      }
-
-      @keyframes rotator {
-      0% {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(270deg);
-                transform: rotate(270deg);
-      }
-      }
-
-      .path {
-      stroke-dasharray: 187;
-      stroke-dashoffset: 0;
-      -webkit-transform-origin: center;
-              transform-origin: center;
-      -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-              animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-      }
-
-      @-webkit-keyframes colors {
-      0% {
-        stroke: #4285F4;
-      }
-      25% {
-        stroke: #DE3E35;
-      }
-      50% {
-        stroke: #F7C223;
-      }
-      75% {
-        stroke: #1B9A59;
-      }
-      100% {
-        stroke: #4285F4;
-      }
-      }
-
-      @keyframes colors {
-      0% {
-        stroke: #4285F4;
-      }
-      25% {
-        stroke: #DE3E35;
-      }
-      50% {
-        stroke: #F7C223;
-      }
-      75% {
-        stroke: #1B9A59;
-      }
-      100% {
-        stroke: #4285F4;
-      }
-      }
-
-      @-webkit-keyframes dash {
-      0% {
-        stroke-dashoffset: 187;
-      }
-      50% {
-        stroke-dashoffset: 46.75;
-        -webkit-transform: rotate(135deg);
-                transform: rotate(135deg);
-      }
-      100% {
-        stroke-dashoffset: 187;
-        -webkit-transform: rotate(450deg);
-                transform: rotate(450deg);
-      }
-      }
-
-      @keyframes dash {
-      0% {
-        stroke-dashoffset: 187;
-      }
-      50% {
-        stroke-dashoffset: 46.75;
-        -webkit-transform: rotate(135deg);
-                transform: rotate(135deg);
-      }
-      100% {
-        stroke-dashoffset: 187;
-        -webkit-transform: rotate(450deg);
-                transform: rotate(450deg);
-      }
-      }
-    </style>
-    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-      <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-    </svg>
-  </div>
-
-  <main>
-    <%-partial('_partials/appbar')%>
-    <%-partial('_partials/drawer')%>
-    <div id="top"></div>
-
-    <%- js("js/lightgallery.min") %>
-
-    <div id="barba-wrapper">
-      <div class="barba-container"  data-namespace="<%= layout %>">
-        <%- body %>
-      </div>
-    </div>
-  </main>
-
-  <div id="outdated" style="z-index: 9999;">
-    <h6><%= __('outdated_browser.title')  %></h6>
-    <p><%= __('outdated_browser.line_one') %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= __('outdated_browser.link') %></a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= __('outdated_browser.close') %>">&times;</a></p>
-  </div>
-  <%-partial('_partials/import_js.ejs')%>
-
-</body>
-</html>
+<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>创建简化微博总览 | 再见二丁目</title><meta name="description"><meta name="generator" content="再见二丁目"><meta name="author" content="Wyman Yan"><meta name="keywords" content="sjaak van den berg, svdb, bitcoin, crypto, payment, integration, bitcoins, wordpress, betaling, webshop, front end, design, ontwerp, developer"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160x160.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png"><meta name="msapplication-TileColor" content="#121315"><meta name="msapplication-TileImage" content="/images/mstile-144x144.png"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><a href="/"><img src="/images/taeyeon.png" alt="再见二丁目" title="再见二丁目"></a><h1><a href="/" alt="再见二丁目" title="再见二丁目" itemprop="headline">再见二丁目</a></h1><p itemprop="description">소나기</p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/" alt="Home" title="Home" itemprop="url">Home</a></li><li itemprop="name"><a href="/_posts" alt="Articles" title="Articles" itemprop="url">Articles</a></li><li itemprop="name"><a href="/images" alt="About" title="About" itemprop="url">About</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><article class="full"><h1 itemprop="headline">创建简化微博总览</h1><span class="post-meta">Published on<time itemprop="datePublished" datetime="2018-05-06T11:18:00.000Z"> 星期日, 五月 6日 2018 at 19:18</time><br>Last updated on<time itemprop="dateModified" datetime="2018-05-06T11:18:00.000Z"> 星期一, 五月 28日 2018 at 22:47</time></span><h1 id="创建简化微博总览"><a href="#创建简化微博总览" class="headerlink" title="创建简化微博总览"></a>创建简化微博总览</h1><hr>
+<h3 id="开始创建前需要总览的几个方向："><a href="#开始创建前需要总览的几个方向：" class="headerlink" title="开始创建前需要总览的几个方向："></a>开始创建前需要总览的几个方向：</h3><ul>
+<li><strong>该怎么开始设计，分化微博所需要的几个基本功能</strong></li>
+<li><strong>技术方面需要学习准备些什么</strong></li>
+<li><strong>在创建简易微博的过程中遇到了哪些问题</strong></li>
+</ul>
+<hr>
+<h1 id="创建的开始"><a href="#创建的开始" class="headerlink" title="创建的开始"></a>创建的开始</h1><h2 id="lt-一-gt-分化微博所需要的几个基本功能"><a href="#lt-一-gt-分化微博所需要的几个基本功能" class="headerlink" title="&lt;一&gt;分化微博所需要的几个基本功能"></a>&lt;一&gt;分化微博所需要的几个基本功能</h2><blockquote>
+<p>1.首先着手的工作是思考，先考虑创建一个简易的微博至少需要几个基本功能，<br>同时要结合用户的需求来考虑问题。而所谓分化问题我觉得有点像我们常说的分治法，<br>先把问题一个一个地平分下去，最后再糅合在一起。<br>2.我先把微博分成三个部分来进行，分别是注册页面(create)，登陆页面(login)和用户页面(home)。然后再分别考虑三大页面下细分的小功能，一口吃不成个胖子，一开始想要一步到位是有困难的。</p>
+</blockquote>
+<hr>
+<h2 id="lt-二-gt-技术准备与支持"><a href="#lt-二-gt-技术准备与支持" class="headerlink" title="&lt;二&gt;技术准备与支持"></a>&lt;二&gt;技术准备与支持</h2><blockquote>
+<p>1.首先要准备的就是php开发环境的选择，在这里其实很尴尬的是自己一开始用的是XAMPP，<br>这个集成软件包官网的安装包中MariaDB取代了mysql，所以只能选择在其他网站下载XAMPP，<br>但是版本都比较老旧，最后还是选择使用WAMPP的开发环境。<br>2.当然在这里有出过一个问题，其图标一开始显示黄色或橙色，而且显示只启动了一个或者两个服务，<br>这个时候我是在计算机管理中的服务查看“SQL Server Reporting Services”，若开启了就把他停止掉就好了。<br>若还是显示橙色，而且服务中的apache还是未启用，可是查看一下端口80和443是不是被占用了。<br>如果确实是被占用了，就在wampp的bin目录下的apache文件夹中的conf找到httpd.conf将80端口改为8001，<br>以及extra下的httpd-ssl以及extra下的httpd-ssl.conf的443端口改为一个未被占用的端口。<br>修改过后再将服务中的apache启动，应该就解决了。实在不行，索性重装一次……</p>
+</blockquote>
+<p>###可以用以下代码在命令行查询端口80是否被占用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat  -aon|findstr  &quot;80&quot;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>3.完成这个页面要学习php，html，mysql的运用。然而在我分别学习了这三块知识点后,却不懂如何将他们的糅合在一起，比如如何将输入到html的input框的内容(账号，密码等等)通过php将数据与mysql数据库中的比较，产生反馈，并储存用户信息。最后还是通过百度了解get和post的运用才解决注册页面的功能。</p>
+</blockquote>
+<hr>
+<h2 id="lt-三-gt-所遇到的问题"><a href="#lt-三-gt-所遇到的问题" class="headerlink" title="&lt;三&gt;所遇到的问题"></a>&lt;三&gt;所遇到的问题</h2><blockquote>
+<p>1.验证码的设置，校验，反馈，自己通过视频的学习才做出一个简易的验证码制作。这个验证码是数字与字母<br>的混搭，加之点和线的干扰。在验证码的制作中得出的感悟是，验证码的作用是为了识别人与机器，并不是故意<br>刁难人的输入，所以有些易于混淆的字母数字可以不用设置，比如数字0与字母o，数字1与字母l，数字2与字母z。<br>2.最后的问题，就是文件名后缀的问题了。一开始所有的代码文件都是用了.html结尾，发现相同的代码以html文件打开和以php文件打开是不一样的。后来上网查找后才得知，后缀识别问题，php的话，浏览器需要配合服务器环境，两个一起处理，如果是.html等后缀，浏览器会认为这个本身就是一个静态文件，和服务器等无关，那么就自己解析了（其实就是被php忽略了，没有达到php去解析），一般情况下，只有php文件能够包含html代码，而不能反过来使用。</p>
+</blockquote>
+<hr>
+<h2 id="心得与体会："><a href="#心得与体会：" class="headerlink" title="心得与体会："></a>心得与体会：</h2><h4 id="万事开头难，中间难，结尾难，不能因为说难就一直想，倒不如直接放开手就是干，有错误改就是了，反正没有人看着你。至于技术性问题都是可以在网上找到的。而且耳听为虚，眼看不一定为实，但是动手了实践了自然知道哪些方面存在问题。还有就是自己在学习中还是切忌浮躁，可能在看视频翻书学习的过程中有些东西是自己学过的或者说在本次考核没用到的，但是这些迟早是要学的，倒不如当下先花时间把它了解清楚。自己一开始在慕课网看的php基础教程，学习时还是有点着急了，所以一开始就打了验证码出来-看着视频学的-，然而还是不懂其所以然，也无法将其运用在自己的微博中，最后还是得重新找视频学，这样反而花费了多余的精力与时间。"><a href="#万事开头难，中间难，结尾难，不能因为说难就一直想，倒不如直接放开手就是干，有错误改就是了，反正没有人看着你。至于技术性问题都是可以在网上找到的。而且耳听为虚，眼看不一定为实，但是动手了实践了自然知道哪些方面存在问题。还有就是自己在学习中还是切忌浮躁，可能在看视频翻书学习的过程中有些东西是自己学过的或者说在本次考核没用到的，但是这些迟早是要学的，倒不如当下先花时间把它了解清楚。自己一开始在慕课网看的php基础教程，学习时还是有点着急了，所以一开始就打了验证码出来-看着视频学的-，然而还是不懂其所以然，也无法将其运用在自己的微博中，最后还是得重新找视频学，这样反而花费了多余的精力与时间。" class="headerlink" title="万事开头难，中间难，结尾难，不能因为说难就一直想，倒不如直接放开手就是干，有错误改就是了，反正没有人看着你。至于技术性问题都是可以在网上找到的。而且耳听为虚，眼看不一定为实，但是动手了实践了自然知道哪些方面存在问题。还有就是自己在学习中还是切忌浮躁，可能在看视频翻书学习的过程中有些东西是自己学过的或者说在本次考核没用到的，但是这些迟早是要学的，倒不如当下先花时间把它了解清楚。自己一开始在慕课网看的php基础教程，学习时还是有点着急了，所以一开始就打了验证码出来(看着视频学的)，然而还是不懂其所以然，也无法将其运用在自己的微博中，最后还是得重新找视频学，这样反而花费了多余的精力与时间。"></a>万事开头难，中间难，结尾难，不能因为说难就一直想，倒不如直接放开手就是干，有错误改就是了，反正没有人看着你。至于技术性问题都是可以在网上找到的。而且耳听为虚，眼看不一定为实，但是动手了实践了自然知道哪些方面存在问题。还有就是自己在学习中还是切忌浮躁，可能在看视频翻书学习的过程中有些东西是自己学过的或者说在本次考核没用到的，但是这些迟早是要学的，倒不如当下先花时间把它了解清楚。自己一开始在慕课网看的php基础教程，学习时还是有点着急了，所以一开始就打了验证码出来(看着视频学的)，然而还是不懂其所以然，也无法将其运用在自己的微博中，最后还是得重新找视频学，这样反而花费了多余的精力与时间。</h4></article></main></body></html>
